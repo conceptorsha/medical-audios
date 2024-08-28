@@ -19,6 +19,8 @@ class SearchController extends GetxController {
 }
 
 class SearchScreen extends StatefulWidget {
+  const SearchScreen({super.key});
+
   @override
   _SearchScreenState createState() => _SearchScreenState();
 }
@@ -57,22 +59,22 @@ class _SearchScreenState extends State<SearchScreen> {
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(8.0),
                 ),
-                prefixIcon: Icon(Icons.search),
+                prefixIcon: const Icon(Icons.search),
               ),
             ),
-            SizedBox(height: 24.0),
-            Text(
+            const SizedBox(height: 24.0),
+            const Text(
               'Recent Searches',
               style: TextStyle(
                 fontSize: 18.0,
                 fontWeight: FontWeight.bold,
               ),
             ),
-            SizedBox(height: 12.0),
+            const SizedBox(height: 12.0),
             Expanded(
               child: Obx(
                     () => searchController.recentSearches.isEmpty
-                    ? Center(child: Text('No recent searches'))
+                    ? const Center(child: Text('No recent searches'))
                     : ListView.builder(
                   itemCount: searchController.recentSearches.length,
                   itemBuilder: (context, index) {

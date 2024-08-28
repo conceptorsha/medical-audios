@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 import '../../controllers/register_controllers.dart';
 
 class SignupScreen extends StatelessWidget {
-  SignupScreen({super.key});
+  const SignupScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -12,22 +12,22 @@ class SignupScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Sign Up'),
+        title: const Text('Sign Up'),
         backgroundColor: Theme.of(context).primaryColor,
       ),
       body: SingleChildScrollView(
-        padding: EdgeInsets.all(20.0),
+        padding: const EdgeInsets.all(20.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
+            const Text(
               'Sign Up',
               style: TextStyle(
                 fontSize: 28,
                 fontWeight: FontWeight.bold,
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Form(
               key: controller.formKey,
               child: Column(
@@ -43,7 +43,7 @@ class SignupScreen extends StatelessWidget {
                       return null;
                     },
                   ),
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
 
                   // Email TextFormField
                   _buildTextField(
@@ -57,7 +57,7 @@ class SignupScreen extends StatelessWidget {
                       return null;
                     },
                   ),
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
 
                   // University TextFormField
                   _buildTextField(
@@ -70,7 +70,7 @@ class SignupScreen extends StatelessWidget {
                       return null;
                     },
                   ),
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
 
                   // Course TextFormField
                   _buildTextField(
@@ -83,7 +83,7 @@ class SignupScreen extends StatelessWidget {
                       return null;
                     },
                   ),
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
 
                   // Year of Study TextFormField
                   _buildTextField(
@@ -96,7 +96,7 @@ class SignupScreen extends StatelessWidget {
                       return null;
                     },
                   ),
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
 
                   // Password TextFormField
                   Obx(() => _buildTextField(
@@ -118,7 +118,7 @@ class SignupScreen extends StatelessWidget {
                       onPressed: controller.togglePasswordVisibility,
                     ),
                   )),
-                  SizedBox(height: 30),
+                  const SizedBox(height: 30),
 
                   // Register Button
                   ElevatedButton(
@@ -129,20 +129,20 @@ class SignupScreen extends StatelessWidget {
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.orange,
-                      minimumSize: Size(double.infinity, 50),
+                      minimumSize: const Size(double.infinity, 50),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(20),
                       ),
                     ),
-                    child: Text('Register'),
+                    child: const Text('Register'),
                   ),
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
 
                   // Have an account? Login
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text(
+                      const Text(
                         'Have an account? ',
                         style: TextStyle(fontSize: 16),
                       ),
@@ -161,7 +161,7 @@ class SignupScreen extends StatelessWidget {
                       ),
                     ],
                   ),
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
 
                   // Terms and Conditions Text
                   Text(
@@ -195,7 +195,7 @@ class SignupScreen extends StatelessWidget {
       keyboardType: keyboardType,
       decoration: InputDecoration(
         labelText: label,
-        border: OutlineInputBorder(),
+        border: const OutlineInputBorder(),
         suffixIcon: suffixIcon,
       ),
       validator: validator,

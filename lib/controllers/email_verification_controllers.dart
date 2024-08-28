@@ -35,7 +35,9 @@ class EmailVerificationController extends GetxController {
     // Example verification logic
     if (code == '1234') { // Replace with actual verification logic
       // Clear the code input boxes
-      codeControllers.forEach((controller) => controller.clear());
+      for (var controller in codeControllers) {
+        controller.clear();
+      }
       enteredCode.value = '';
       // Navigate to the CongratulationsScreen
       Get.toNamed('/congrats'); // Ensure this route is defined in your routes

@@ -3,6 +3,8 @@ import 'package:get/get.dart';
 import '../model/content_model.dart'; // Ensure this path is correct
 
 class OnboardingScreen extends StatefulWidget {
+  const OnboardingScreen({super.key});
+
   @override
   _OnboardingScreenState createState() => _OnboardingScreenState();
 }
@@ -26,7 +28,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   void _goToNextPage() {
     if (_currentIndex < contents.length - 1) {
       _pageController.nextPage(
-        duration: Duration(milliseconds: 300),
+        duration: const Duration(milliseconds: 300),
         curve: Curves.ease,
       );
     } else {
@@ -47,7 +49,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               return Column(
                 children: [
                   // Top half with the image
-                  Container(
+                  SizedBox(
                     height: MediaQuery.of(context).size.height * 0.5, // 50% of screen height
                     width: double.infinity,
                     child: Image.asset(
@@ -65,21 +67,21 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                           children: [
                             Text(
                               contents[i].title,
-                              style: TextStyle(
+                              style: const TextStyle(
                                 fontSize: 35,
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
-                            SizedBox(height: 20),
+                            const SizedBox(height: 20),
                             Text(
                               contents[i].description,
                               textAlign: TextAlign.center,
-                              style: TextStyle(
+                              style: const TextStyle(
                                 fontSize: 18,
                                 color: Colors.grey,
                               ),
                             ),
-                            SizedBox(height: 20), // Space between description and dots
+                            const SizedBox(height: 20), // Space between description and dots
                             // Dots indicator positioned between description and button
                             Row(
                               mainAxisAlignment: MainAxisAlignment.center,
@@ -88,14 +90,11 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                                     (index) => buildDot(index, context),
                               ),
                             ),
-                            SizedBox(height: 20), // Space between dots and button
-                            Container(
+                            const SizedBox(height: 20), // Space between dots and button
+                            SizedBox(
                               height: 60,
                               width: double.infinity,
                               child: ElevatedButton(
-                                child: Text(
-                                  _currentIndex == contents.length - 1 ? "Continue" : "Next",
-                                ),
                                 onPressed: _goToNextPage,
                                 style: ElevatedButton.styleFrom(
                                   backgroundColor: Theme.of(context).primaryColor,
@@ -103,6 +102,9 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                                   shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(20),
                                   ),
+                                ),
+                                child: Text(
+                                  _currentIndex == contents.length - 1 ? "Continue" : "Next",
                                 ),
                               ),
                             ),
@@ -123,7 +125,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               onTap: () {
                 Get.toNamed('/welcome'); // Navigate to WelcomeScreen
               },
-              child: Text(
+              child: const Text(
                 "Skip",
                 style: TextStyle(
                   color: Colors.white,
@@ -142,7 +144,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
     return Container(
       height: 10,
       width: _currentIndex == index ? 22 : 10,
-      margin: EdgeInsets.only(right: 5),
+      margin: const EdgeInsets.only(right: 5),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
         color: Theme.of(context).primaryColor,

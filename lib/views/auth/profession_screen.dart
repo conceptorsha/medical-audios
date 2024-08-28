@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:medical_audios/controllers/profession_signup.dart';
 
 class ProfessionalSignupScreen extends StatelessWidget {
-  ProfessionalSignupScreen({super.key});
+  const ProfessionalSignupScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -11,22 +11,22 @@ class ProfessionalSignupScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Professional Sign Up'),
+        title: const Text('Professional Sign Up'),
         backgroundColor: Theme.of(context).primaryColor,
       ),
       body: SingleChildScrollView(
-        padding: EdgeInsets.all(20.0),
+        padding: const EdgeInsets.all(20.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
+            const Text(
               'Sign Up as a Professional',
               style: TextStyle(
                 fontSize: 28,
                 fontWeight: FontWeight.bold,
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Form(
               key: controller.formKey,
               child: Column(
@@ -42,7 +42,7 @@ class ProfessionalSignupScreen extends StatelessWidget {
                       return null;
                     },
                   ),
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
 
                   // Email TextFormField
                   _buildTextField(
@@ -56,7 +56,7 @@ class ProfessionalSignupScreen extends StatelessWidget {
                       return null;
                     },
                   ),
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
 
                   // Company Name TextFormField
                   _buildTextField(
@@ -69,7 +69,7 @@ class ProfessionalSignupScreen extends StatelessWidget {
                       return null;
                     },
                   ),
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
 
                   // Profession TextFormField
                   _buildTextField(
@@ -82,7 +82,7 @@ class ProfessionalSignupScreen extends StatelessWidget {
                       return null;
                     },
                   ),
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
 
                   // Years of Expertise TextFormField
                   _buildTextField(
@@ -96,7 +96,7 @@ class ProfessionalSignupScreen extends StatelessWidget {
                       return null;
                     },
                   ),
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
 
                   // Password TextFormField
                   Obx(() => _buildTextField(
@@ -118,7 +118,7 @@ class ProfessionalSignupScreen extends StatelessWidget {
                       onPressed: controller.togglePasswordVisibility,
                     ),
                   )),
-                  SizedBox(height: 30),
+                  const SizedBox(height: 30),
 
                   // Register Button
                   ElevatedButton(
@@ -129,20 +129,20 @@ class ProfessionalSignupScreen extends StatelessWidget {
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.orange,
-                      minimumSize: Size(double.infinity, 50),
+                      minimumSize: const Size(double.infinity, 50),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(20),
                       ),
                     ),
-                    child: Text('Register'),
+                    child: const Text('Register'),
                   ),
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
 
                   // Have an account? Login
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text(
+                      const Text(
                         'Have an account? ',
                         style: TextStyle(fontSize: 16),
                       ),
@@ -161,7 +161,7 @@ class ProfessionalSignupScreen extends StatelessWidget {
                       ),
                     ],
                   ),
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
 
                   // Terms and Conditions Text
                   Text(
@@ -195,7 +195,7 @@ class ProfessionalSignupScreen extends StatelessWidget {
       keyboardType: keyboardType,
       decoration: InputDecoration(
         labelText: label,
-        border: OutlineInputBorder(),
+        border: const OutlineInputBorder(),
         suffixIcon: suffixIcon,
       ),
       validator: validator,

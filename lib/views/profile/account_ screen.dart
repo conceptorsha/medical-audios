@@ -7,11 +7,13 @@ class AccountScreen extends StatelessWidget {
   final AccountController controller = Get.put(AccountController());
   final _formKey = GlobalKey<FormState>();
 
+  AccountScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Center(child: Text('My Account')),
+        title: const Center(child: Text('My Account')),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -23,7 +25,7 @@ class AccountScreen extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(
+                  const Text(
                     'Profile',
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                   ),
@@ -31,11 +33,11 @@ class AccountScreen extends StatelessWidget {
                     onPressed: () {
                       // Add your change profile functionality here
                     },
-                    child: Text('Change Profile'),
+                    child: const Text('Change Profile'),
                   ),
                 ],
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               // Form with TextFormFields
               Form(
                 key: _formKey,
@@ -43,7 +45,7 @@ class AccountScreen extends StatelessWidget {
                   children: [
                     TextFormField(
                       controller: controller.nameController,
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                         labelText: 'Name',
                         border: OutlineInputBorder(),
                       ),
@@ -54,10 +56,10 @@ class AccountScreen extends StatelessWidget {
                         return null;
                       },
                     ),
-                    SizedBox(height: 16),
+                    const SizedBox(height: 16),
                     TextFormField(
                       controller: controller.emailController,
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                         labelText: 'Email',
                         border: OutlineInputBorder(),
                       ),
@@ -71,10 +73,10 @@ class AccountScreen extends StatelessWidget {
                         return null;
                       },
                     ),
-                    SizedBox(height: 16),
+                    const SizedBox(height: 16),
                     TextFormField(
                       controller: controller.phoneNumberController,
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                         labelText: 'Phone Number',
                         border: OutlineInputBorder(),
                       ),
@@ -88,10 +90,10 @@ class AccountScreen extends StatelessWidget {
                         return null;
                       },
                     ),
-                    SizedBox(height: 16),
+                    const SizedBox(height: 16),
                     TextFormField(
                       controller: controller.passwordController,
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                         labelText: 'Password',
                         border: OutlineInputBorder(),
                       ),
@@ -106,7 +108,7 @@ class AccountScreen extends StatelessWidget {
                         return null;
                       },
                     ),
-                    SizedBox(height: 30),
+                    const SizedBox(height: 30),
                     // Save Changes Button
                     ElevatedButton(
                       onPressed: () {
@@ -114,8 +116,8 @@ class AccountScreen extends StatelessWidget {
                           controller.saveChanges();
                         }
                       },
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(
+                      child: const Padding(
+                        padding: EdgeInsets.symmetric(
                             vertical: 12.0, horizontal: 40.0),
                         child: Text(
                           'Save Changes',

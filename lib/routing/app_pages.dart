@@ -13,6 +13,8 @@ import 'package:medical_audios/views/dashboard/dashboard_screen.dart';
 import 'package:medical_audios/views/dashboard/library_screen.dart';
 import 'package:medical_audios/views/dashboard/profile_screen.dart';
 import 'package:medical_audios/views/dashboard/search_screen.dart';
+import 'package:medical_audios/views/auth/forgot_password.dart';
+import 'package:medical_audios/views/auth/reset_password.dart';
 
 import '../views/Cardiology/Cardio_screen.dart';
 import '../views/profile/account_ screen.dart';
@@ -32,21 +34,25 @@ class AppPages {
   static const String cardiology = '/cardiology';
   static const String search = '/search';
   static const String audio = '/audio';
+  static const String forgotPassword = '/forgot_password';
+  static const String resetPassword = '/reset_password';
 
   static final routes = [
-    GetPage(name: onboarding, page: () => OnboardingScreen()),
-    GetPage(name: welcome, page: () => WelcomeScreen()),
-    GetPage(name: professionalSignup, page: () => ProfessionalSignupScreen()),
-    GetPage(name: login, page: () => LoginScreen()),
-    GetPage(name: congrats, page: () => CongratulationsScreen()),
-    GetPage(name: emailVerification, page: () => EmailVerificationScreen()),
-    GetPage(name: dashboard, page: () => DashboardPage()),
+    GetPage(name: onboarding, page: () => const OnboardingScreen()),
+    GetPage(name: welcome, page: () => const WelcomeScreen()),
+    GetPage(name: professionalSignup, page: () => const ProfessionalSignupScreen()),
+    GetPage(name: login, page: () => const LoginScreen()),
+    GetPage(name: congrats, page: () => const CongratulationsScreen()),
+    GetPage(name: emailVerification, page: () => const EmailVerificationScreen()),
+    GetPage(name: dashboard, page: () => const DashboardPage()),
     GetPage(name: cardio, page: () => CardioScreen()),
-    GetPage(name: library, page: () => LibraryScreen()),
-    GetPage(name: profile, page: () => ProfileScreen()),
+    GetPage(name: library, page: () => const LibraryScreen()),
+    GetPage(name: profile, page: () => const ProfileScreen()),
     GetPage(name: account, page: () => AccountScreen()),
-    GetPage(name: cardiology, page: () => CardiologyPage()),
-    GetPage(name: search, page: () => SearchScreen()),
-    GetPage(name: audio, page: () => AudioPlayerScreen()),
+    GetPage(name: cardiology, page: () => const CardiologyPage()),
+    GetPage(name: search, page: () => const SearchScreen()),
+    GetPage(name: audio, page: () => const AudioPlayerScreen()),
+    GetPage(name: forgotPassword, page: () => ForgotPassword()),
+    GetPage(name: resetPassword, page: () => ResetPassword()),
   ];
 }

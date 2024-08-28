@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:medical_audios/views/auth/verification_screen.dart';
+import 'package:medical_audios/views/auth/forgot_password.dart';
 import '../../controllers/login_controllers.dart';
 
 class LoginScreen extends StatelessWidget {
-  LoginScreen({super.key});
+  const LoginScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -12,23 +12,23 @@ class LoginScreen extends StatelessWidget {
 
     return Scaffold(
       body: SingleChildScrollView(
-        padding: EdgeInsets.all(20.0),
+        padding: const EdgeInsets.all(20.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(height: 60),
+            const SizedBox(height: 60),
             // Greeting Text
             Row(
               children: [
-                Text(
+                const Text(
                   "Hey, ",
                   style: TextStyle(fontSize: 32),
                 ),
-                Text(
+                const Text(
                   "Danny",
                   style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
                 ),
-                SizedBox(width: 10),
+                const SizedBox(width: 10),
                 Icon(
                   Icons.waving_hand,
                   color: Theme.of(context).primaryColor,
@@ -36,12 +36,12 @@ class LoginScreen extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(height: 40),
+            const SizedBox(height: 40),
 
             // Profession/Student Dropdown
             Obx(() => DropdownButtonFormField<String>(
               value: controller.selectedOption.value,
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 labelText: 'Select Role',
                 border: OutlineInputBorder(),
               ),
@@ -53,36 +53,36 @@ class LoginScreen extends StatelessWidget {
                 );
               }).toList(),
             )),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
 
             // Email TextFormField
             TextFormField(
               controller: controller.emailController,
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 labelText: 'Email',
                 border: OutlineInputBorder(),
               ),
               keyboardType: TextInputType.emailAddress,
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
 
             // Password TextFormField
             TextFormField(
               controller: controller.passwordController,
               obscureText: true,
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 labelText: 'Password',
                 border: OutlineInputBorder(),
               ),
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
 
             // Forgot Password Text
             Align(
               alignment: Alignment.centerRight,
               child: TextButton(
                 onPressed: () {
-                  // Handle forgot password
+                  Get.toNamed("/forgot_password");
                 },
                 child: Text(
                   'Forgot Password?',
@@ -90,7 +90,7 @@ class LoginScreen extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
 
             // Login Button
             ElevatedButton(
@@ -99,21 +99,21 @@ class LoginScreen extends StatelessWidget {
 
               },
               style: ElevatedButton.styleFrom(
-                backgroundColor: Color(0xFFFF5722),
-                minimumSize: Size(double.infinity, 50),
+                backgroundColor: const Color(0xFFFF5722),
+                minimumSize: const Size(double.infinity, 50),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(20),
                 ),
               ),
-              child: Text('Login'),
+              child: const Text('Login'),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
 
             // Don't have an account? Text and Sign Up
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text(
+                const Text(
                   "Don't have an account? ",
                   style: TextStyle(fontSize: 16),
                 ),
@@ -132,7 +132,7 @@ class LoginScreen extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
 
             // Sign up with Google and Apple
             Column(
@@ -141,26 +141,26 @@ class LoginScreen extends StatelessWidget {
                   onPressed: () {
                     Get.toNamed('/email');
                  },
-                  icon: Icon(Icons.g_mobiledata),
-                  label: Text('Sign Up with Google'),
+                  icon: const Icon(Icons.g_mobiledata),
+                  label: const Text('Sign Up with Google'),
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.red,
-                    minimumSize: Size(double.infinity, 50),
+                    minimumSize: const Size(double.infinity, 50),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(20),
                     ),
                   ),
                 ),
-                SizedBox(height: 10),
+                const SizedBox(height: 10),
                 ElevatedButton.icon(
                   onPressed: () {
                     Get.toNamed('/email'); // Navigate to Login screen
                   },
-                  icon: Icon(Icons.apple),
-                  label: Text('Sign Up with Apple'),
+                  icon: const Icon(Icons.apple),
+                  label: const Text('Sign Up with Apple'),
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.black,
-                    minimumSize: Size(double.infinity, 50),
+                    minimumSize: const Size(double.infinity, 50),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(20),
                     ),

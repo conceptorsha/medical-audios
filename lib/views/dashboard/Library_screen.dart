@@ -4,6 +4,8 @@ import '../../controllers/library_controller.dart';
 import '../../nav_bar/navigation_bar.dart';
 
 class LibraryScreen extends StatefulWidget {
+  const LibraryScreen({super.key});
+
   @override
   _LibraryScreenState createState() => _LibraryScreenState();
 }
@@ -16,16 +18,16 @@ class _LibraryScreenState extends State<LibraryScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Library'),
+        title: const Text('Library'),
         actions: [
           IconButton(
-            icon: Icon(Icons.search),
+            icon: const Icon(Icons.search),
             onPressed: () {
               Get.toNamed('/Search'); // Navigate to SearchScreen
             },
           ),
           IconButton(
-            icon: Icon(Icons.notifications),
+            icon: const Icon(Icons.notifications),
             onPressed: () {
               // Implement notifications functionality
             },
@@ -43,15 +45,15 @@ class _LibraryScreenState extends State<LibraryScreen> {
                 children: [
                   ElevatedButton(
                     onPressed: () => controller.filterSpecialties('All'),
-                    child: Text('All'),
+                    child: const Text('All'),
                   ),
                   ElevatedButton(
                     onPressed: () => controller.filterSpecialties('Internal Medicine'),
-                    child: Text('Internal Medicine'),
+                    child: const Text('Internal Medicine'),
                   ),
                   ElevatedButton(
                     onPressed: () => controller.filterSpecialties('Surgery'),
-                    child: Text('Surgery'),
+                    child: const Text('Surgery'),
                   ),
                 ],
               ),
@@ -71,11 +73,11 @@ class _LibraryScreenState extends State<LibraryScreen> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(specialty.title,
-                                  style: TextStyle(
+                                  style: const TextStyle(
                                       fontWeight: FontWeight.bold)),
-                              SizedBox(height: 4),
+                              const SizedBox(height: 4),
                               Text('Resources: ${specialty.resources}'),
-                              SizedBox(height: 4),
+                              const SizedBox(height: 4),
                               Text('Duration: ${specialty.duration}'),
                             ],
                           ),

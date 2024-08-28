@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'profession_screen.dart';
 import 'signup_screen.dart';
-import 'verification_screen.dart'; // Import the SignupScreen
+// Import the SignupScreen
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({super.key});
@@ -17,7 +16,7 @@ class WelcomeScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             // "Hey, welcome!" text with a waving hand icon
-            Row(
+            const Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
@@ -34,7 +33,7 @@ class WelcomeScreen extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
 
             // "Tell us about yourself" text
             Text(
@@ -44,7 +43,7 @@ class WelcomeScreen extends StatelessWidget {
                 color: Colors.grey[700],
               ),
             ),
-            SizedBox(height: 40),
+            const SizedBox(height: 40),
 
             // "I am a student" button
             ElevatedButton(
@@ -52,19 +51,19 @@ class WelcomeScreen extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => SignupScreen(), // Navigate to SignupScreen
+                    builder: (context) => const SignupScreen(), // Navigate to SignupScreen
                   ),
                 );
               },
               style: ElevatedButton.styleFrom(
-                minimumSize: Size(double.infinity, 50),
+                minimumSize: const Size(double.infinity, 50),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(20),
                 ),
               ),
-              child: Text("I am a student"),
+              child: const Text("I am a student"),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
 
             // "I am a professional" button
             ElevatedButton(
@@ -73,20 +72,20 @@ class WelcomeScreen extends StatelessWidget {
 
               },
               style: ElevatedButton.styleFrom(
-                minimumSize: Size(double.infinity, 50),
+                minimumSize: const Size(double.infinity, 50),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(20),
                 ),
               ),
-              child: Text("I am a professional"),
+              child: const Text("I am a professional"),
             ),
-            SizedBox(height: 40),
+            const SizedBox(height: 40),
 
             // "Have an account? Login" text with clickable "Login"
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text(
+                const Text(
                   "Have an account? ",
                   style: TextStyle(fontSize: 16),
                 ),
@@ -106,7 +105,7 @@ class WelcomeScreen extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(height: 40),
+            const SizedBox(height: 40),
 
             // "Sign in with Google" button
             ElevatedButton.icon(
@@ -114,10 +113,10 @@ class WelcomeScreen extends StatelessWidget {
                 Get.toNamed('/email');
                 // Handle sign in with Google
               },
-              icon: Icon(Icons.g_translate), // Replace with Google icon
-              label: Text("Sign in with Google"),
+              icon: const Icon(Icons.g_translate), // Replace with Google icon
+              label: const Text("Sign in with Google"),
               style: ElevatedButton.styleFrom(
-                minimumSize: Size(double.infinity, 50),
+                minimumSize: const Size(double.infinity, 50),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(20),
                 ),
@@ -125,7 +124,7 @@ class WelcomeScreen extends StatelessWidget {
                 foregroundColor: Colors.white,
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
 
             // "Sign in with Apple" button
             ElevatedButton.icon(
@@ -133,10 +132,10 @@ class WelcomeScreen extends StatelessWidget {
                 Get.toNamed('/email');
 
                 },
-              icon: Icon(Icons.apple), // Replace with Apple icon
-              label: Text("Sign in with Apple"),
+              icon: const Icon(Icons.apple), // Replace with Apple icon
+              label: const Text("Sign in with Apple"),
               style: ElevatedButton.styleFrom(
-                minimumSize: Size(double.infinity, 50),
+                minimumSize: const Size(double.infinity, 50),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(20),
                 ),

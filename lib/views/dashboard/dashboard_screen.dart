@@ -5,6 +5,8 @@ import '../../controllers/home_controller.dart';
 import '../../nav_bar/navigation_bar.dart';
 
 class DashboardPage extends StatefulWidget {
+  const DashboardPage({super.key});
+
   @override
   _DashboardPageState createState() => _DashboardPageState();
 }
@@ -23,19 +25,22 @@ class _DashboardPageState extends State<DashboardPage> {
 
   @override
   Widget build(BuildContext context) {
+    // final double _screenHeight = MediaQuery.of(context).size.height;
+    final double _screenWidth = MediaQuery.of(context).size.width;
+
     return Scaffold(
       appBar: AppBar(
-        title: Text('Dashboard'),
+        title: const Text('Dashboard'),
         backgroundColor: Colors.white,
         actions: [
           IconButton(
-            icon: Icon(Icons.search),
+            icon: const Icon(Icons.search),
             onPressed: () {
-              Get.toNamed('/Search'); // Navigate to SearchScreen
+              Get.toNamed('/search'); // Navigate to SearchScreen
             },
           ),
           IconButton(
-            icon: Icon(Icons.notifications),
+            icon: const Icon(Icons.notifications),
             onPressed: () {
               // Implement notifications functionality
             },
@@ -45,16 +50,16 @@ class _DashboardPageState extends State<DashboardPage> {
       backgroundColor: Colors.white,
       resizeToAvoidBottomInset: false,
       body: Padding(
-        padding: EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0),
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
+              const Text(
                 'Hey Danny\n what will you listen to today?',
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
@@ -62,31 +67,31 @@ class _DashboardPageState extends State<DashboardPage> {
                     onPressed: () {
                       controller.filterItems('All');
                     },
-                    child: Text('All'),
+                    child: const Text('All'),
                   ),
                   ElevatedButton(
                     onPressed: () {
                       controller.filterItems('Cardiology');
                     },
-                    child: Text('Cardiology'),
+                    child: const Text('Cardiology'),
                   ),
                   ElevatedButton(
                     onPressed: () {
                       Get.toNamed('/Dermatology');
                     },
-                    child: Text('Dermatology'),
+                    child: const Text('Dermatology'),
                   ),
                 ],
               ),
-              SizedBox(height: 20),
-              Text(
+              const SizedBox(height: 20),
+              const Text(
                 'Recently Played',
                 style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               Obx(
                     () => SizedBox(
-                  height: 200,
+                  height: 220,
                   child: ListView.builder(
                     scrollDirection: Axis.horizontal,
                     itemCount: controller.filteredItems.length,
@@ -97,8 +102,8 @@ class _DashboardPageState extends State<DashboardPage> {
                           controller.navigateToDetailPage(item);
                         },
                         child: Container(
-                          width: 160,
-                          margin: EdgeInsets.only(right: 10),
+                          width: _screenWidth / 2.2,
+                          margin: const EdgeInsets.only(right: 10),
                           child: Card(
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
@@ -109,32 +114,32 @@ class _DashboardPageState extends State<DashboardPage> {
                                   height: 100,
                                   width: double.infinity,
                                 ),
-                                SizedBox(height: 8),
+                                const SizedBox(height: 8),
                                 Text(item.title,
-                                    style: TextStyle(
+                                    style: const TextStyle(
                                         fontSize: 14,
                                         fontWeight: FontWeight.bold)),
-                                SizedBox(height: 4),
+                                const SizedBox(height: 4),
                                 Flexible(
                                   child: Text(
                                     item.description,
-                                    style: TextStyle(fontSize: 12),
+                                    style: const TextStyle(fontSize: 12),
                                     overflow: TextOverflow.ellipsis,
                                     maxLines: 2,
                                   ),
                                 ),
-                                SizedBox(height: 4),
-                                Text(item.time, style: TextStyle(fontSize: 12)),
-                                SizedBox(height: 4),
+                                const SizedBox(height: 4),
+                                Text(item.time, style: const TextStyle(fontSize: 12)),
+                                const SizedBox(height: 4),
                                 Row(
                                   children: [
-                                    Icon(Icons.star,
+                                    const Icon(Icons.star,
                                         size: 14, color: Colors.yellow),
                                     Text('${item.rating}',
-                                        style: TextStyle(fontSize: 12)),
-                                    SizedBox(width: 4),
+                                        style: const TextStyle(fontSize: 12)),
+                                    const SizedBox(width: 4),
                                     Text('(${item.ratingCount} ratings)',
-                                        style: TextStyle(fontSize: 12)),
+                                        style: const TextStyle(fontSize: 12)),
                                   ],
                                 ),
                               ],
@@ -146,15 +151,15 @@ class _DashboardPageState extends State<DashboardPage> {
                   ),
                 ),
               ),
-              SizedBox(height: 20),
-              Text(
+              const SizedBox(height: 20),
+              const Text(
                 'New Updates',
                 style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               Obx(
                     () => SizedBox(
-                  height: 200,
+                  height: 220,
                   child: ListView.builder(
                     scrollDirection: Axis.horizontal,
                     itemCount: controller.newUpdates.length,
@@ -165,8 +170,8 @@ class _DashboardPageState extends State<DashboardPage> {
                           controller.navigateToDetailPage(item);
                         },
                         child: Container(
-                          width: 160,
-                          margin: EdgeInsets.only(right: 10),
+                          width: _screenWidth / 2.2,
+                          margin: const EdgeInsets.only(right: 10),
                           child: Card(
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
@@ -177,32 +182,32 @@ class _DashboardPageState extends State<DashboardPage> {
                                   height: 100,
                                   width: double.infinity,
                                 ),
-                                SizedBox(height: 8),
+                                const SizedBox(height: 8),
                                 Text(item.title,
-                                    style: TextStyle(
+                                    style: const TextStyle(
                                         fontSize: 14,
                                         fontWeight: FontWeight.bold)),
-                                SizedBox(height: 4),
+                                const SizedBox(height: 4),
                                 Flexible(
                                   child: Text(
                                     item.description,
-                                    style: TextStyle(fontSize: 12),
+                                    style: const TextStyle(fontSize: 12),
                                     overflow: TextOverflow.ellipsis,
                                     maxLines: 2,
                                   ),
                                 ),
-                                SizedBox(height: 4),
-                                Text(item.time, style: TextStyle(fontSize: 12)),
-                                SizedBox(height: 4),
+                                const SizedBox(height: 4),
+                                Text(item.time, style: const TextStyle(fontSize: 12)),
+                                const SizedBox(height: 4),
                                 Row(
                                   children: [
-                                    Icon(Icons.star,
+                                    const Icon(Icons.star,
                                         size: 14, color: Colors.yellow),
                                     Text('${item.rating}',
-                                        style: TextStyle(fontSize: 12)),
-                                    SizedBox(width: 4),
+                                        style: const TextStyle(fontSize: 12)),
+                                    const SizedBox(width: 4),
                                     Text('(${item.ratingCount} ratings)',
-                                        style: TextStyle(fontSize: 12)),
+                                        style: const TextStyle(fontSize: 12)),
                                   ],
                                 ),
                               ],
