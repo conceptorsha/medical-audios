@@ -18,14 +18,20 @@ class CardioController extends GetxController {
         title: 'UNIT 1: INTRODUCTION TO CARDIOVASCULAR ANATOMY',
         topics: 4,
         duration: '6 hrs 20 mins',
+        route: '/topics', // Specify route for this unit
       ),
       CardioUnit(
         title: 'UNIT 2: HEART AND BLOOD VESSELS',
         topics: 5,
         duration: '7 hrs 15 mins',
+        route: '/topics', // Specify route for this unit
       ),
-      // Add more units as needed
+      // Add more units with their respective routes
     ];
     cardioUnits.value = loadedUnits;
+  }
+
+  void navigateToTopic(String route) {
+    Get.toNamed(route); // Navigate to the specified route
   }
 }

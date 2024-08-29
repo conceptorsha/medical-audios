@@ -14,6 +14,7 @@ import 'package:medical_audios/views/dashboard/profile_screen.dart';
 import 'package:medical_audios/views/dashboard/search_screen.dart';
 
 import '../views/Cardiology/Cardio_screen.dart';
+import '../views/Cardiology/cardiology_content.dart';
 import '../views/profile/account_ screen.dart';
 
 class AppPages {
@@ -31,6 +32,7 @@ class AppPages {
   static const String cardiology = '/cardiology';
   static const String search = '/search';
   static const String audio = '/audio';
+  static const String topics = '/topics';
 
   static final routes = [
     GetPage(name: onboarding, page: () => OnboardingScreen()),
@@ -46,6 +48,7 @@ class AppPages {
     GetPage(name: account, page: () => AccountScreen()),
     GetPage(name: cardiology, page: () => CardiologyPage()),
     GetPage(name: search, page: () => SearchScreen()),
+    GetPage(name: topics, page: () => CardiologyContentScreen()),
     GetPage(name: audio, page: () => AudioPlayerScreen()),
   ];
 }
