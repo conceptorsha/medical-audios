@@ -59,22 +59,22 @@ class _SearchScreenState extends State<SearchScreen> {
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(8.0),
                 ),
-                prefixIcon: const Icon(Icons.search),
+                prefixIcon: Icon(Icons.search),
               ),
             ),
-            const SizedBox(height: 24.0),
-            const Text(
+            SizedBox(height: 24.0),
+            Text(
               'Recent Searches',
               style: TextStyle(
                 fontSize: 18.0,
                 fontWeight: FontWeight.bold,
               ),
             ),
-            const SizedBox(height: 12.0),
+            SizedBox(height: 12.0),
             Expanded(
               child: Obx(
                     () => searchController.recentSearches.isEmpty
-                    ? const Center(child: Text('No recent searches'))
+                    ? Center(child: Text('No recent searches'))
                     : ListView.builder(
                   itemCount: searchController.recentSearches.length,
                   itemBuilder: (context, index) {

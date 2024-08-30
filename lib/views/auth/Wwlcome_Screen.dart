@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'signup_screen.dart';
 // Import the SignupScreen
+import 'profession_screen.dart';
+import 'signup_screen.dart';
+import 'verification_screen.dart'; // Import the SignupScreen
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({super.key});

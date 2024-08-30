@@ -4,8 +4,6 @@ import '../../controllers/library_controller.dart';
 import '../../nav_bar/navigation_bar.dart';
 
 class LibraryScreen extends StatefulWidget {
-  const LibraryScreen({super.key});
-
   @override
   _LibraryScreenState createState() => _LibraryScreenState();
 }
@@ -27,7 +25,7 @@ class _LibraryScreenState extends State<LibraryScreen> {
             },
           ),
           IconButton(
-            icon: const Icon(Icons.notifications),
+            icon: Icon(Icons.notifications),
             onPressed: () {
               // Implement notifications functionality
             },
@@ -45,15 +43,15 @@ class _LibraryScreenState extends State<LibraryScreen> {
                 children: [
                   ElevatedButton(
                     onPressed: () => controller.filterSpecialties('All'),
-                    child: const Text('All'),
+                    child: Text('All'),
                   ),
                   ElevatedButton(
                     onPressed: () => controller.filterSpecialties('Internal Medicine'),
-                    child: const Text('Internal Medicine'),
+                    child: Text('Internal Medicine'),
                   ),
                   ElevatedButton(
                     onPressed: () => controller.filterSpecialties('Surgery'),
-                    child: const Text('Surgery'),
+                    child: Text('Surgery'),
                   ),
                 ],
               ),
@@ -73,11 +71,11 @@ class _LibraryScreenState extends State<LibraryScreen> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(specialty.title,
-                                  style: const TextStyle(
+                                  style: TextStyle(
                                       fontWeight: FontWeight.bold)),
-                              const SizedBox(height: 4),
+                              SizedBox(height: 4),
                               Text('Resources: ${specialty.resources}'),
-                              const SizedBox(height: 4),
+                              SizedBox(height: 4),
                               Text('Duration: ${specialty.duration}'),
                             ],
                           ),

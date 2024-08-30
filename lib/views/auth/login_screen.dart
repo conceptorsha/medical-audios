@@ -102,6 +102,7 @@ class _LoginScreenState extends State<LoginScreen> {
               child: TextButton(
                 onPressed: () {
                   Get.toNamed("/forgot_password");
+                  // Handle forgot password
                 },
                 child: Text(
                   'Forgot Password?',
@@ -110,6 +111,7 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
             ),
             const SizedBox(height: 20),
+            SizedBox(height: 20),
 
             // Login Button
             ElevatedButton(
@@ -129,6 +131,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 ],),
             ),
             const SizedBox(height: 20),
+      
 
             // Don't have an account? Text and Sign Up
             Row(
@@ -154,6 +157,7 @@ class _LoginScreenState extends State<LoginScreen> {
               ],
             ),
             const SizedBox(height: 20),
+            SizedBox(height: 20),
 
             // Sign up with Google and Apple
             Column(
@@ -173,6 +177,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                 ),
                 const SizedBox(height: 10),
+                SizedBox(height: 10),
                 ElevatedButton.icon(
                   onPressed: () {
                     Get.toNamed('/email'); // Navigate to Login screen

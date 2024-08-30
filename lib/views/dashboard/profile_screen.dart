@@ -4,8 +4,6 @@ import 'package:get/get.dart';
 import '../../nav_bar/navigation_bar.dart';
 
 class ProfileScreen extends StatefulWidget {
-  const ProfileScreen({super.key});
-
   @override
   _ProfileScreenState createState() => _ProfileScreenState();
 }
@@ -23,7 +21,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Center(child: Text('Profile')),
+        title: Center(child: Text('Profile')),
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -34,7 +32,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   // Profile Image, Name, and Number
-                  const Row(
+                  Row(
                     children: [
                       CircleAvatar(
                         radius: 30,
@@ -63,62 +61,62 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     onPressed: () {
                       // Add your logout functionality here
                     },
+                    child: Text('Logout'),
                     style: ElevatedButton.styleFrom(
                      // primary: Colors.red, // Button color
                     ),
-                    child: const Text('Logout'),
                   ),
                 ],
               ),
             ),
-            const Divider(), // Adds a separator line
+            Divider(), // Adds a separator line
             // Scrollable List of Items
             ListTile(
-              leading: const Icon(Icons.person),
-              title: const Text('Account'),
-              trailing: const Icon(Icons.chevron_right),
+              leading: Icon(Icons.person),
+              title: Text('Account'),
+              trailing: Icon(Icons.chevron_right),
               onTap: () {
                 Get.toNamed('/account'); // Navigate to WelcomeScreen
                 // Handle Account tap
               },
             ),
             ListTile(
-              leading: const Icon(Icons.location_on),
-              title: const Text('Address'),
-              trailing: const Icon(Icons.chevron_right),
+              leading: Icon(Icons.location_on),
+              title: Text('Address'),
+              trailing: Icon(Icons.chevron_right),
               onTap: () {
                 Get.toNamed('/welcome'); // Navigate to WelcomeScreen
                 // Handle Address tap
               },
             ),
             ListTile(
-              leading: const Icon(Icons.favorite),
-              title: const Text('Your Favorite'),
-              trailing: const Icon(Icons.chevron_right),
+              leading: Icon(Icons.favorite),
+              title: Text('Your Favorite'),
+              trailing: Icon(Icons.chevron_right),
               onTap: () {
                 // Handle Your Favorite tap
               },
             ),
             ListTile(
-              leading: const Icon(Icons.history),
-              title: const Text('History'),
-              trailing: const Icon(Icons.chevron_right),
+              leading: Icon(Icons.history),
+              title: Text('History'),
+              trailing: Icon(Icons.chevron_right),
               onTap: () {
                 // Handle History tap
               },
             ),
             ListTile(
-              leading: const Icon(Icons.payment),
-              title: const Text('Payment'),
-              trailing: const Icon(Icons.chevron_right),
+              leading: Icon(Icons.payment),
+              title: Text('Payment'),
+              trailing: Icon(Icons.chevron_right),
               onTap: () {
                 // Handle Payment tap
               },
             ),
             ListTile(
-              leading: const Icon(Icons.help_center),
-              title: const Text('Help Center'),
-              trailing: const Icon(Icons.chevron_right),
+              leading: Icon(Icons.help_center),
+              title: Text('Help Center'),
+              trailing: Icon(Icons.chevron_right),
               onTap: () {
                 // Handle Help Center tap
               },

@@ -10,7 +10,7 @@ class CustomBottomNavBar extends StatelessWidget {
   final int currentIndex;
   final Function(int) onTap;
 
-  const CustomBottomNavBar({super.key, 
+  CustomBottomNavBar({
     required this.currentIndex,
     required this.onTap,
   });
@@ -23,23 +23,23 @@ class CustomBottomNavBar extends StatelessWidget {
         onTap(index); // Call the onTap function passed from parent
         switch (index) {
           case 0:
-            Get.to(() => const DashboardPage());
+            Get.to(() => DashboardPage());
             break;
           case 1:
-            Get.to(() => const LibraryScreen());
+            Get.to(() => LibraryScreen());
             break;
           case 2:
             Get.to(() => const SearchScreen());
             break;
           case 3:
-            Get.to(() => const ProfileScreen());
+            Get.to(() =>  ProfileScreen());
             break;
         }
       },
       selectedItemColor: Colors.blue, // Color for the selected item
       unselectedItemColor: Colors.grey, // Color for the unselected items
       backgroundColor: Colors.white, // Background color of the navigation bar
-      items: const [
+      items: [
         BottomNavigationBarItem(
           icon: Icon(Icons.home),
           label: 'Home',

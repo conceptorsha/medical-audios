@@ -7,7 +7,7 @@ import Foundation
 
 import audio_session
 import just_audio
-import open_file
+import open_file_mac
 import path_provider_foundation
 
 func RegisterGeneratedPlugins(registry: FlutterPluginRegistry) {

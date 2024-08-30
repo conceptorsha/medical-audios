@@ -2,13 +2,16 @@ class CardioUnit {
   final String title;
   final int topics;
   final String duration;
+  final String route; // Add route property
 
   CardioUnit({
     required this.title,
     required this.topics,
     required this.duration,
+    required this.route, // Initialize route
   });
 }
+
 // lib/models/cardiology_book.dart
 class CardiologyBook {
   final String image;

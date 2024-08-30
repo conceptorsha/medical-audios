@@ -28,7 +28,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   void _goToNextPage() {
     if (_currentIndex < contents.length - 1) {
       _pageController.nextPage(
-        duration: const Duration(milliseconds: 300),
+        duration: Duration(milliseconds: 300),
         curve: Curves.ease,
       );
     } else {
@@ -49,7 +49,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               return Column(
                 children: [
                   // Top half with the image
-                  SizedBox(
+                  Container(
                     height: MediaQuery.of(context).size.height * 0.5, // 50% of screen height
                     width: double.infinity,
                     child: Image.asset(
@@ -67,21 +67,21 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                           children: [
                             Text(
                               contents[i].title,
-                              style: const TextStyle(
+                              style: TextStyle(
                                 fontSize: 35,
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
-                            const SizedBox(height: 20),
+                            SizedBox(height: 20),
                             Text(
                               contents[i].description,
                               textAlign: TextAlign.center,
-                              style: const TextStyle(
+                              style: TextStyle(
                                 fontSize: 18,
                                 color: Colors.grey,
                               ),
                             ),
-                            const SizedBox(height: 20), // Space between description and dots
+                            SizedBox(height: 20), // Space between description and dots
                             // Dots indicator positioned between description and button
                             Row(
                               mainAxisAlignment: MainAxisAlignment.center,
@@ -90,11 +90,14 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                                     (index) => buildDot(index, context),
                               ),
                             ),
-                            const SizedBox(height: 20), // Space between dots and button
-                            SizedBox(
+                            SizedBox(height: 20), // Space between dots and button
+                            Container(
                               height: 60,
                               width: double.infinity,
                               child: ElevatedButton(
+                                child: Text(
+                                  _currentIndex == contents.length - 1 ? "Continue" : "Next",
+                                ),
                                 onPressed: _goToNextPage,
                                 style: ElevatedButton.styleFrom(
                                   backgroundColor: Theme.of(context).primaryColor,
@@ -102,9 +105,6 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                                   shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(20),
                                   ),
-                                ),
-                                child: Text(
-                                  _currentIndex == contents.length - 1 ? "Continue" : "Next",
                                 ),
                               ),
                             ),
@@ -125,7 +125,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               onTap: () {
                 Get.toNamed('/welcome'); // Navigate to WelcomeScreen
               },
-              child: const Text(
+              child: Text(
                 "Skip",
                 style: TextStyle(
                   color: Colors.white,
@@ -144,7 +144,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
     return Container(
       height: 10,
       width: _currentIndex == index ? 22 : 10,
-      margin: const EdgeInsets.only(right: 5),
+      margin: EdgeInsets.only(right: 5),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
         color: Theme.of(context).primaryColor,

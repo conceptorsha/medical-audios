@@ -43,60 +43,60 @@ class _CardiologyPageState extends State<CardiologyPage> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                const SizedBox(height: 16.0),
+                SizedBox(height: 16.0),
                 Image.asset(book.image), // Use asset image
-                const SizedBox(height: 16.0),
+                SizedBox(height: 16.0),
                 Text(
                   book.title, // Title from controller
-                  style: const TextStyle(fontSize: 24.0, fontWeight: FontWeight.bold),
+                  style: TextStyle(fontSize: 24.0, fontWeight: FontWeight.bold),
                   textAlign: TextAlign.center,
                 ),
-                const SizedBox(height: 8.0),
+                SizedBox(height: 8.0),
                 Text(
                   book.subtitle, // Subtitle from controller
-                  style: const TextStyle(fontSize: 18.0, fontWeight: FontWeight.w600),
+                  style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.w600),
                   textAlign: TextAlign.center,
                 ),
-                const SizedBox(height: 8.0),
+                SizedBox(height: 8.0),
                 Text(
                   'Name: ${book.Name}', // Name from controller
-                  style: const TextStyle(fontSize: 16.0),
+                  style: TextStyle(fontSize: 16.0),
                   textAlign: TextAlign.center,
                 ),
-                const SizedBox(height: 16.0),
+                SizedBox(height: 16.0),
                 Text(
                   book.book, // Text from controller
-                  style: const TextStyle(fontSize: 16.0),
+                  style: TextStyle(fontSize: 16.0),
                   textAlign: TextAlign.center,
                 ),
-                const SizedBox(height: 16.0),
+                SizedBox(height: 16.0),
                 Text(
                   'Duration: ${book.duration}', // Duration from controller
-                  style: const TextStyle(fontSize: 16.0),
+                  style: TextStyle(fontSize: 16.0),
                   textAlign: TextAlign.center,
                 ),
-                const SizedBox(height: 8.0),
+                SizedBox(height: 8.0),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    const Icon(Icons.star, color: Colors.yellow),
-                    const Icon(Icons.star, color: Colors.yellow),
-                    const Icon(Icons.star, color: Colors.yellow),
-                    const Icon(Icons.star, color: Colors.yellow),
-                    const Icon(Icons.star_half, color: Colors.yellow),
-                    const SizedBox(width: 8.0),
+                    Icon(Icons.star, color: Colors.yellow),
+                    Icon(Icons.star, color: Colors.yellow),
+                    Icon(Icons.star, color: Colors.yellow),
+                    Icon(Icons.star, color: Colors.yellow),
+                    Icon(Icons.star_half, color: Colors.yellow),
+                    SizedBox(width: 8.0),
                     Text(
                       book.rating.toString(), // Rating from controller
-                      style: const TextStyle(fontSize: 16.0),
+                      style: TextStyle(fontSize: 16.0),
                     ),
-                    const SizedBox(width: 8.0),
+                    SizedBox(width: 8.0),
                     Text(
                       '(${book.numberOfRatings} ratings)', // Number of ratings from controller
-                      style: const TextStyle(fontSize: 16.0),
+                      style: TextStyle(fontSize: 16.0),
                     ),
                   ],
                 ),
-                const SizedBox(height: 16.0),
+                SizedBox(height: 16.0),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 16.0),
                   child: ElevatedButton(
@@ -105,51 +105,51 @@ class _CardiologyPageState extends State<CardiologyPage> {
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.orange, // Button color
-                      minimumSize: const Size(double.infinity, 50), // Full width
+                      minimumSize: Size(double.infinity, 50), // Full width
                     ),
-                    child: const Text('Play'),
+                    child: Text('Play'),
                   ),
                 ),
-                const SizedBox(height: 8.0),
+                SizedBox(height: 8.0),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 16.0),
                   child: ElevatedButton(
                     onPressed: controller.download,
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: const Color(0xFFFFC107), // Light orange
-                      minimumSize: const Size(double.infinity, 50), // Full width
+                      backgroundColor: Color(0xFFFFC107), // Light orange
+                      minimumSize: Size(double.infinity, 50), // Full width
                     ),
-                    child: const Text('Download'),
+                    child: Text('Download'),
                   ),
                 ),
-                const SizedBox(height: 8.0),
+                SizedBox(height: 8.0),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 16.0),
                   child: ElevatedButton(
                     onPressed: controller.addToFavorite,
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: const Color(0xFFFFA500), // Dull orange
-                      minimumSize: const Size(double.infinity, 50), // Full width
+                      backgroundColor: Color(0xFFFFA500), // Dull orange
+                      minimumSize: Size(double.infinity, 50), // Full width
                     ),
-                    child: const Text('Add to Favorite'),
+                    child: Text('Add to Favorite'),
                   ),
                 ),
-                const SizedBox(height: 16.0),
-                const Text(
+                SizedBox(height: 16.0),
+                Text(
                   'Summary', // Heading for summary
                   style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
                   textAlign: TextAlign.center,
                 ),
-                const SizedBox(height: 8.0),
+                SizedBox(height: 8.0),
                 Text(
                   book.description, // Description from controller
-                  style: const TextStyle(fontSize: 16.0),
+                  style: TextStyle(fontSize: 16.0),
                   textAlign: TextAlign.center,
                 ),
-                const SizedBox(height: 16.0),
+                SizedBox(height: 16.0),
                 GestureDetector(
                   onTap: controller.readMore,
-                  child: const Text(
+                  child: Text(
                     'Read More', // Clickable text
                     style: TextStyle(
                       color: Colors.blue,
@@ -157,11 +157,11 @@ class _CardiologyPageState extends State<CardiologyPage> {
                     ),
                   ),
                 ),
-                const SizedBox(height: 16.0),
+                SizedBox(height: 16.0),
 
                 // What Listeners Say Card
                 Card(
-                  margin: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+                  margin: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
                   child: Padding(
                     padding: const EdgeInsets.all(16.0),
                     child: Column(
@@ -171,22 +171,22 @@ class _CardiologyPageState extends State<CardiologyPage> {
                           'What Listeners Say',
                           style: Theme.of(context).textTheme.titleLarge,
                         ),
-                        const SizedBox(height: 8.0),
+                        SizedBox(height: 8.0),
                         Row(
                           children: [
-                            const Icon(Icons.star, color: Colors.yellow, size: 20.0),
-                            const Icon(Icons.star, color: Colors.yellow, size: 20.0),
-                            const Icon(Icons.star, color: Colors.yellow, size: 20.0),
-                            const Icon(Icons.star, color: Colors.yellow, size: 20.0),
-                            const Icon(Icons.star_half, color: Colors.yellow, size: 20.0),
-                            const SizedBox(width: 8.0),
+                            Icon(Icons.star, color: Colors.yellow, size: 20.0),
+                            Icon(Icons.star, color: Colors.yellow, size: 20.0),
+                            Icon(Icons.star, color: Colors.yellow, size: 20.0),
+                            Icon(Icons.star, color: Colors.yellow, size: 20.0),
+                            Icon(Icons.star_half, color: Colors.yellow, size: 20.0),
+                            SizedBox(width: 8.0),
                             Text(
                               '4.5 (10.0k)',
                               style: Theme.of(context).textTheme.bodyLarge,
                             ),
                           ],
                         ),
-                        const SizedBox(height: 16.0),
+                        SizedBox(height: 16.0),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
@@ -194,12 +194,12 @@ class _CardiologyPageState extends State<CardiologyPage> {
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  const Icon(Icons.star, color: Colors.yellow, size: 20.0),
+                                  Icon(Icons.star, color: Colors.yellow, size: 20.0),
                                   Text(
                                     'Star Rating',
                                     style: Theme.of(context).textTheme.titleMedium,
                                   ),
-                                  const SizedBox(height: 8.0),
+                                  SizedBox(height: 8.0),
                                   Text(
                                     '4.7',
                                     style: Theme.of(context).textTheme.bodyLarge,
@@ -207,17 +207,17 @@ class _CardiologyPageState extends State<CardiologyPage> {
                                 ],
                               ),
                             ),
-                            const VerticalDivider(thickness: 2),
+                            VerticalDivider(thickness: 2),
                             Expanded(
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  const Icon(Icons.star, color: Colors.yellow, size: 20.0),
+                                  Icon(Icons.star, color: Colors.yellow, size: 20.0),
                                   Text(
                                     'Performance',
                                     style: Theme.of(context).textTheme.titleMedium,
                                   ),
-                                  const SizedBox(height: 8.0),
+                                  SizedBox(height: 8.0),
                                   Text(
                                     '4.3',
                                     style: Theme.of(context).textTheme.bodyLarge,
@@ -234,7 +234,7 @@ class _CardiologyPageState extends State<CardiologyPage> {
 
                 // Add Review Section
                 Container(
-                  margin: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+                  margin: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
                   padding: const EdgeInsets.all(16.0),
                   decoration: BoxDecoration(
                     color: Colors.white,
@@ -244,7 +244,7 @@ class _CardiologyPageState extends State<CardiologyPage> {
                         color: Colors.grey.withOpacity(0.2),
                         spreadRadius: 2,
                         blurRadius: 5,
-                        offset: const Offset(0, 3),
+                        offset: Offset(0, 3),
                       ),
                     ],
                   ),
@@ -255,13 +255,13 @@ class _CardiologyPageState extends State<CardiologyPage> {
                         'Add Review',
                         style: Theme.of(context).textTheme.titleLarge,
                       ),
-                      const SizedBox(height: 8.0),
+                      SizedBox(height: 8.0),
                       Obx(
                             () => Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: List.generate(5, (index) {
                             return IconButton(
-                              icon: const Icon(Icons.star),
+                              icon: Icon(Icons.star),
                               color: index < controller.rating.value
                                   ? Colors.yellow
                                   : Colors.grey,
@@ -272,24 +272,24 @@ class _CardiologyPageState extends State<CardiologyPage> {
                           }),
                         ),
                       ),
-                      const SizedBox(height: 8.0),
+                      SizedBox(height: 8.0),
                       ElevatedButton(
                         onPressed: controller.submitReview,
                         style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.orange,
-                          minimumSize: const Size(double.infinity, 50),
+                          minimumSize: Size(double.infinity, 50),
                         ),
-                        child: const Text('Submit Review'),
+                        child: Text('Submit Review'),
                       ),
                     ],
                   ),
                 ),
                 //SizedBox(height: 8.0),
-                const SizedBox(height: 8.0),
+                SizedBox(height: 8.0),
 
 // New Expanded Card
                 Container(
-                  margin: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+                  margin: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
                   padding: const EdgeInsets.all(16.0),
                   decoration: BoxDecoration(
                     color: Colors.white,
@@ -299,7 +299,7 @@ class _CardiologyPageState extends State<CardiologyPage> {
                         color: Colors.grey.withOpacity(0.2),
                         spreadRadius: 2,
                         blurRadius: 5,
-                        offset: const Offset(0, 3),
+                        offset: Offset(0, 3),
                       ),
                     ],
                   ),
@@ -310,7 +310,7 @@ class _CardiologyPageState extends State<CardiologyPage> {
                         'Great Resource',
                         style: Theme.of(context).textTheme.titleLarge,
                       ),
-                      const SizedBox(height: 8.0),
+                      SizedBox(height: 8.0),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: List.generate(5, (index) {
@@ -321,27 +321,27 @@ class _CardiologyPageState extends State<CardiologyPage> {
                           );
                         }),
                       ),
-                      const SizedBox(height: 8.0),
+                      SizedBox(height: 8.0),
                       Text(
                         'Dr janny: 2 days ago', // Name with upload time
                         style: Theme.of(context).textTheme.bodyMedium,
                       ),
-                      const SizedBox(height: 8.0),
+                      SizedBox(height: 8.0),
                       Text(
                         'Thorough understanding of cardiology basics', // Description
                         style: Theme.of(context).textTheme.bodyLarge,
                       ),
-                      const SizedBox(height: 8.0),
+                      SizedBox(height: 8.0),
                       GestureDetector(
                         onTap: () {
                           // Implement read more functionality
                         },
-                        child: const Text(
+                        child: Text(
                           'Read More',
                           style: TextStyle(color: Colors.blue, fontSize: 16.0),
                         ),
                       ),
-                      const SizedBox(height: 8.0),
+                      SizedBox(height: 8.0),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
@@ -359,12 +359,12 @@ class _CardiologyPageState extends State<CardiologyPage> {
                     ],
                   ),
                 ),
-                const SizedBox(height: 8.0),
+                SizedBox(height: 8.0),
 
                 // Button to See Reviews
                 Container(
                   padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                  margin: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 16.0),
+                  margin: EdgeInsets.symmetric(horizontal: 16.0, vertical: 16.0),
 
                   child: ElevatedButton(
                     onPressed: () {
@@ -372,9 +372,9 @@ class _CardiologyPageState extends State<CardiologyPage> {
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.orange, // Button color
-                      minimumSize: const Size(double.infinity, 50), // Full width
+                      minimumSize: Size(double.infinity, 50), // Full width
                     ),
-                    child: const Text('See Review'),
+                    child: Text('See Review'),
                   ),
                 ),
               ],

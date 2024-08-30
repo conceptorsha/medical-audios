@@ -11,15 +11,15 @@ class ProfessionalSignupScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Professional Sign Up'),
+        title: Text('Professional Sign Up'),
         backgroundColor: Theme.of(context).primaryColor,
       ),
       body: SingleChildScrollView(
-        padding: const EdgeInsets.all(20.0),
+        padding: EdgeInsets.all(20.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Text(
+            Text(
               'Sign Up as a Professional',
               style: TextStyle(
                 fontSize: 28,
@@ -43,6 +43,7 @@ class ProfessionalSignupScreen extends StatelessWidget {
                     },
                   ),
                   const SizedBox(height: 20),
+                  SizedBox(height: 20),
 
                   // Email TextFormField
                   _buildTextField(
@@ -57,6 +58,7 @@ class ProfessionalSignupScreen extends StatelessWidget {
                     },
                   ),
                   const SizedBox(height: 20),
+                  SizedBox(height: 20),
 
                   // Company Name TextFormField
                   _buildTextField(
@@ -70,6 +72,7 @@ class ProfessionalSignupScreen extends StatelessWidget {
                     },
                   ),
                   const SizedBox(height: 20),
+                  SizedBox(height: 20),
 
                   // Profession TextFormField
                   _buildTextField(
@@ -83,6 +86,7 @@ class ProfessionalSignupScreen extends StatelessWidget {
                     },
                   ),
                   const SizedBox(height: 20),
+                  SizedBox(height: 20),
 
                   // Years of Expertise TextFormField
                   _buildTextField(
@@ -97,6 +101,7 @@ class ProfessionalSignupScreen extends StatelessWidget {
                     },
                   ),
                   const SizedBox(height: 20),
+                  SizedBox(height: 20),
 
                   // Password TextFormField
                   Obx(() => _buildTextField(
@@ -119,6 +124,7 @@ class ProfessionalSignupScreen extends StatelessWidget {
                     ),
                   )),
                   const SizedBox(height: 30),
+                  SizedBox(height: 30),
 
                   // Register Button
                   ElevatedButton(

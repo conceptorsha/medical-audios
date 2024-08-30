@@ -27,7 +27,7 @@ class CongratulationsScreen extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              const SizedBox(height: 10),
+              SizedBox(height: 10),
               Text(
                 'Your account is complete.\nHappy learning!',
                 textAlign: TextAlign.center,
